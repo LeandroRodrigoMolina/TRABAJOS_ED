@@ -7,12 +7,21 @@ por pantalla el mensaje: “Incorrecto. No se puede continuar”."""
 print("Ingrese 1 para un conteo ascendente, 2 para un conteo descendente")
 numero = int(input())
 
-if(numero != 1 or numero != 2):
+if(numero != 1 and numero != 2):
     print("Incorrecto. No se puede continuar.")
 else:
     if(numero == 1): #ascendente cuenta desde 1 a ese numero
-        numAux = int(input("Ingrese limite superior."))
-        
+        numAux = int(input("Ingrese limite superior: "))
+        for i in range(1, numAux, 1):
+            print(i)
+        print(numAux)
 
     elif(numero == 2): #descendente tiene que ser un numero menor que 20 y la cuenta sera de 20 a ese numero
-        numAux = int(input("Ingrese limite inferior."))
+        numAux = int(input("Ingrese limite inferior: "))
+        
+        if(numAux < 20):
+            for i in range(20, numAux, -1):
+                print(i)
+            print(numAux)
+        else:
+            print("Ingrese numero menor que 20.")
