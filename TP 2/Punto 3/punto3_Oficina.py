@@ -1,12 +1,12 @@
 from datetime import time
 class Oficina:
-    def __init__(self, nombre : str, hora_entrada : time(), hora_salida : time()):
+    def __init__(self, nombre : str, hora_entrada, hora_salida):
         self.nombre = nombre
-        self.hora_entrada = hora_Entrada
+        self.hora_entrada = hora_entrada
         self.hora_salida = hora_salida
 
     def __str__(self):
-        return "Nombre:%s\nEntrada:%s\nSalida:%s" % (self.nombre, self.hora_entrada, self.hora_salida)
+        return "\nNombre: %s\nEntrada: %s\nSalida: %s" % (self.nombre, self.hora_entrada, self.hora_salida)
 
     def __repr__(self):
         return self.__str__()

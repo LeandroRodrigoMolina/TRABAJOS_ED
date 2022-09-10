@@ -8,7 +8,7 @@ class Empleado:
         self.oficina = oficina
 
     def __str__(self):
-        return "Legajo:%d\nDocumento:%s\nApellido:%s\nNombre:%s\nOficina:%s"
+        return "Legajo: %s\nDocumento: %s\nApellido: %s\nNombre: %s\n\nOficina:%s" % (self.legajo, self.documento, self.apellido, self.nombre, self.oficina)
 
     def __repr__(self):
         return self.__str__()
@@ -20,4 +20,4 @@ class Empleado:
         return False
 
     def __lt__(self, other):
-        pass
+        return self.legajo < other.legajo

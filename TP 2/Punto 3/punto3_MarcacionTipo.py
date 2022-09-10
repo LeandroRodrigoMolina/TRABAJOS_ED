@@ -1,3 +1,4 @@
+#Podria ser una enumeracion o asi como esta xd
 class MarcacionTipo():
     def __init__(self, entrada, salida):
         self.entrada = entrada
