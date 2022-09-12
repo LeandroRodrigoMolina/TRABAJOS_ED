@@ -44,9 +44,11 @@ class MarcacionesAdmin(MarcacionesAdminAbstract):
         return llegados_tarde
 
     def ordenar_legajo(self) -> None:
-        lista1 = self.marcaciones
-        lista1.sort(key=lambda x: (x.empleado.legajo, x.fecha_Hora))
-        self.marcaciones = lista1
+        lista_AUX = self.marcaciones
+        lista_AUX.sort(key=lambda x: (x.empleado.legajo, x.fecha_Hora))
+        self.marcaciones = lista_AUX
 
     def ordenar_apellido_nombre(self):
-        pass
+        lista_AUX = self.marcaciones
+        lista_AUX.sort(key=lambda x: (x.empleado.apellido, x.empleado.nombre))
+        self.marcaciones = lista_AUX

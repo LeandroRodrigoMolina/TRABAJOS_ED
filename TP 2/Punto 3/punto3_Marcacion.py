@@ -21,6 +21,7 @@ class Marcacion():
     @numRegistro.setter
     def numRegistro(self, a):
         raise ValueError("NO SE PUEDE.")
+        
     def __str__(self):
         return "Numero registro: %d\n\nEmpleado:\n%s\nFecha y hora: %s\nTipo: %s" % (self.__numRegistro, self.empleado, self.fecha_Hora, self.tipo)
 

@@ -52,4 +52,6 @@ marcacion_admin1.agregar(marcacion2)
 
 print(marcacion_admin1)
 marcacion_admin1.ordenar_legajo()
-print("'ORDENADO POR LEGAJO Y POR FECHA/HORA': ", marcacion_admin1)
+#print("'ORDENADO POR LEGAJO Y POR FECHA/HORA': ", marcacion_admin1)
+marcacion_admin1.ordenar_apellido_nombre()
+print("ORDENADO POR APELLIDO Y NOMBRE",marcacion_admin1)

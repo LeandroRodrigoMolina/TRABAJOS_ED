@@ -1,6 +1,6 @@
 from datetime import time
 class Oficina:
-    def __init__(self, nombre : str, hora_entrada, hora_salida):
+    def __init__(self, nombre : str, hora_entrada:time, hora_salida:time):
         self.nombre = nombre
         self.hora_entrada = hora_entrada
         self.hora_salida = hora_salida
