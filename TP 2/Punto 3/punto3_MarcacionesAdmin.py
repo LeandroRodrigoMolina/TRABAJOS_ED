@@ -1,25 +1,52 @@
 from punto3_MarcacionesAdminAbstract import MarcacionesAdminAbstract
+
 class MarcacionesAdmin(MarcacionesAdminAbstract):
     def __init__(self):
         super().__init__()
         
-    def agregar(self, marcacion):
-        pass
+    def agregar(self, marcacion) -> None:
+        self.marcaciones.append(marcacion)
 
-    def empleados(self):
-        pass
+    def empleados(self) -> list:
+        empleados_Repe = []
+        empleados_sinRepe = []
+        for marcacion in self.marcaciones:
+            empleados_Repe.append(marcacion.empleado)
 
-    def filtrar_por_empleado(self, empleado):
-        pass
+        for i in empleados_Repe:
+            if i not in empleados_sinRepe:
+                empleados_sinRepe.append(i)
 
-    def filtrar_por_tipo(self, tipo):
-        pass
+        return empleados_sinRepe
+        
+    def filtrar_por_empleado(self, empleado) -> list:
+        lista_empleados = []
+        for marcacion in self.marcaciones:
+            if marcacion.empleado == empleado:
+                lista_empleados.append(marcacion.empleado)
 
-    def llegadas_tarde(self):
-        pass
+        return lista_empleados
 
-    def ordenar_legajo(self):
-        pass
+    def filtrar_por_tipo(self, tipo) -> list:
+        lista_tipo = []
+        for marcacion in self.marcaciones:
+            if(marcacion == tipo):
+                lista_tipo.append(marcacion)
+
+        return lista_tipo
+
+    def llegadas_tarde(self) -> list:
+        llegados_tarde = []
+        for marcacion in self.marcaciones:
+            if(marcacion.fecha_Hora.hour > marcacion.empleado.oficina.hora_entrada.hour) & (marcacion.fecha_Hora.minute > marcacion.empleado.oficina.hora_entrada.minute):
+                llegados_tarde.append(marcacion)
+
+        return llegados_tarde
+
+    def ordenar_legajo(self) -> None:
+        lista1 = self.marcaciones
+        lista1.sort(key=lambda x: (x.empleado.legajo, x.fecha_Hora))
+        self.marcaciones = lista1
 
     def ordenar_apellido_nombre(self):
         pass

@@ -13,6 +13,14 @@ class Marcacion():
 
         self.ultimo_num_registro = numRegistro
         self.contador_instancias = self.contador_instancias  + 1;
+
+    @property
+    def numRegistro(self):
+        return self.__numRegistro
+
+    @numRegistro.setter
+    def numRegistro(self, a):
+        raise ValueError("NO SE PUEDE.")
     def __str__(self):
         return "Numero registro: %d\n\nEmpleado:\n%s\nFecha y hora: %s\nTipo: %s" % (self.__numRegistro, self.empleado, self.fecha_Hora, self.tipo)
 
@@ -21,14 +29,8 @@ class Marcacion():
 
     def __eq__(self, o):
         if isinstance(o, Marcacion):
-            return (self.__numRegistro == o.numRegistro)
+            return (self.__numRegistro == o.__numRegistro)
 
         return False
 
-    @property
-    def numRegistro(self):
-        return self.__numRegistro
-
-    @numRegistro.setter
-    def numRegistro(self, numeroRegistro):
-        raise ValueError("No se cambiar valor.")
+    

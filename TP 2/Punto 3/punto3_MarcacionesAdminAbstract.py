@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from empleado import Empleado
-from marcacion import Marcacion
+from punto3_Empleado import Empleado
+from punto3_Marcacion import Marcacion
 
 class MarcacionesAdminAbstract(ABC):
 

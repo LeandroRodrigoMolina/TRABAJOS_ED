@@ -5,7 +5,7 @@ class MarcacionTipo():
         self.salida = salida
 
     def __str__(self):
-        return "Entrada:%s\nSalida:%s\n"
+        return "Entrada:%d\nSalida:%d\n" % (self.entrada, self.salida)
 
     def __repr__(self):
         return self.__str__()
