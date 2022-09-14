@@ -8,32 +8,16 @@ especie1 = Especie("Jijuajua")
 raza1 = Raza("Xaxa", especie1)
 mascota1 = Mascota(78, "COSO", raza1, 1892, persona1)
 
-print("Persona:", persona1)
-print()
-print("Especie:",especie1)
-print()
-print("Raza:", raza1)
-print()
-print(mascota1)
+especie2 = Especie("JEJEJE")
+raza2 = Raza("XEXE", especie2)
+mascota2 = Mascota(78, "COSO", raza2, 1892, persona1)
 
-print(persona1 == persona1)
-print(especie1 == especie1)
-print(raza1 == raza1)
-print(mascota1 == mascota1)
-
-print()
-print(persona1 == False)
-print(especie1 == False)
-print(raza1 == False)
-print(mascota1 == False)
-
-print("Probando __repr__")
-print(persona1.__repr__())
-print()
-print(especie1.__repr__())
-print()
-print(raza1.__repr__())
-print()
-print(mascota1.__repr__())
+persona3 = Persona("Block", "Walter", "02345847")
+mascota3= Mascota(200, "MASH", raza2, 2001, persona3)
 
 print("Edad del bicho:", mascota1.edad)
+
+lista_mascotas = [mascota1, mascota2, mascota3]
+
+el_AMO = max_mascotero(lista_mascotas)
+print("EL QUE TIENE MUCHAS MASCOTAS: ", el_AMO)

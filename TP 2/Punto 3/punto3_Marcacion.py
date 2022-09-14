@@ -3,16 +3,14 @@ from punto3_Empleado import Empleado
 from punto3_MarcacionTipo import MarcacionTipo
 
 class Marcacion():
-    ultimo_num_registro = 0;
-    contador_instancias = 0;
-    def __init__(self, numRegistro : int, empleado : Empleado, fecha_Hora : datetime, tipo: MarcacionTipo):
-        self.__numRegistro = numRegistro
+    contador_instancias = 1;
+    def __init__(self, empleado : Empleado, fecha_Hora : datetime, tipo: MarcacionTipo):
+        self.__numRegistro = Marcacion.contador_instancias
         self.empleado = empleado
         self.fecha_Hora = fecha_Hora
         self.tipo = tipo
 
-        self.ultimo_num_registro = numRegistro
-        self.contador_instancias = self.contador_instancias  + 1;
+        Marcacion.contador_instancias = Marcacion.contador_instancias  + 1;
 
     @property
     def numRegistro(self):

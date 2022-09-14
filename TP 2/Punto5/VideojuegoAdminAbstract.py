@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
-from plataforma import Plataforma
-from genero import Genero
-from empresa import Empresa
-from videojuego import Videojuego
+from Plataforma import Plataforma
+from Genero import Genero
+from Empresa import Empresa
+from Videojuego import Videojuego
 
 class VideojuegosAdminAbstract(ABC):
     def __init__(self) -> None:
