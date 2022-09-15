@@ -19,7 +19,7 @@ class Videojuego():
         self.__rankingMetacritic = ranking
 
     def __str__(self):
-        return "Titulo: %s\nGenero: %s\nPlataformas: %s\nDescripcion: %s\nPrecio: %s\nEmpresa desarrolladora: %s\nEmpresa distribuidora: %s\nFecha de lanzamiento: %s\nRanking metacritic: %s" % (self.titulo, self.genero, self.plataformas, self.descripcion, self.precio, self.empresa_Dev, self.empresa_Distri, self.fecha_Lanzamiento, self.__rankingMetacritic)
+        return "\nTitulo: %s %s \nPlataformas: %s \nDescripcion: %s \nPrecio: %s \nEmpresa developer: %s \nEmpresa distribuidora: %s \nFecha lanzamiento: %s \nMetacritic: %s\n" % (self.titulo, self.genero, self.plataformas, self.descripcion, self.precio, self.empresa_Dev, self.empresa_Distri, self.fecha_Lanzamiento, self.__rankingMetacritic)
 
     def __repr__(self):
         return self.__str__()

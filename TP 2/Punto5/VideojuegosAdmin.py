@@ -4,44 +4,39 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
     def __init__(self):
         super().__init__()
 
-    def __str__(self) -> str:
-        string = ','.join(str(videojuego) for videjuego in self.videojuegos)
-        return string
+# SE LO TUVE AL __STR__ QUE CAMBIAR PORQUE NO ME ANDABAN 
+# LOS ORDENAMIENTOS POR TITULO NI POR MEJORES PRIMERO, NO ME ANDABAN LOS LAMBDAS O NI IDEA LA VERDAD
+    def __str__(self) -> str: 
+        res = ""
+        for elem in self.videojuegos:
+            res += "{elem}\n".format(elem=str(elem))
+
+        return res
         
     def agregar(self, videojuego) -> None:
         self.videojuegos.append(videojuego)
 
     def filtrar_por_desarrolladora(self, desarrolladora) -> list:
-        #TA MAL NO SIRVE
-        desarrolladora_Repe = []
-        desarrolladora_SinRepe = []
+        lista_desarrollados = []
         for videojuego in self.videojuegos:
-            desarrolladora_Repe.append(videojuego.empresa_Dev)
+            if videojuego.empresa_Dev == desarrolladora:
+                lista_desarrollados.append(videojuego)
 
-        for i in desarrolladora_Repe:
-            if i not in desarrolladora_SinRepe:
-                desarrolladora_SinRepe.append(i)
-
-        return desarrolladora_SinRepe
+        return lista_desarrollados
 
     def filtrar_por_distribuidora(self, distribuidora) -> list:
-        distribuidora_Repe = []
-        distribuidora_SinRepe = []
-
+        lista_distribuidora = []
         for videojuego in self.videojuegos:
-            distribuidora_Repe.append(videojuego.empresa_Distri)
+            if videojuego.empresa_Distri == distribuidora:
+                lista_distribuidora.append(videojuego)
 
-        for i in distribuidora_Repe:
-            if i not in distribuidora_SinRepe:
-                distribuidora_SinRepe.append(i)
-
-        return distribuidora_SinRepe
+        return lista_distribuidora
 
     def filtrar_por_genero(self, genero) -> list:
         lista_genero = []
         for videojuego in self.videojuegos:
             if videojuego.genero == genero:
-                lista_genero.append(videojuego.genero)
+                lista_genero.append(videojuego)
 
         return lista_genero
 
@@ -59,6 +54,6 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
 
     def ordenar_mejores_primero(self) -> None:
         lista_AUX = self.videojuegos
-        lista_AUX.sort(key=lambda x: (x.ranking_metacritic))
-        lista_AUX.sort(reverse=True)
+        lista_AUX.sort(key=lambda x: (x.rankingMetacritic))
+        lista_AUX.reverse()
         self.videojuegos = lista_AUX

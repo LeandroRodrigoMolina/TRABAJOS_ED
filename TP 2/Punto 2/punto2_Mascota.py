@@ -2,7 +2,7 @@ from punto2_Raza import Raza
 from punto2_Persona import Persona
 
 class Mascota:
-    __ANIO_ACTUAL__ = 2022
+    ANIO_ACTUAL = 2022
     def __init__(self, numRegistro, nombre, raza, anioNacimiento, amo):
         self.numRegistro = numRegistro
         self.nombre = nombre
@@ -23,4 +23,4 @@ class Mascota:
 
     @property
     def edad(self):
-        return (self.__ANIO_ACTUAL__ - self.anioNacimiento)
+        return (Mascota.ANIO_ACTUAL - self.anioNacimiento)

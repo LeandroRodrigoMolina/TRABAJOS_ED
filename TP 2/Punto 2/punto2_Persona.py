@@ -5,7 +5,7 @@ class Persona:
         self.documento = documento
 
     def __str__(self):
-        return "%s %s \nDocumento: %s" % (self.apellido, self.nombre, self.documento)
+        return "%s %s \nDocumento: %s\n" % (self.apellido, self.nombre, self.documento)
 
     def __repr__(self):
         return self.__str__()

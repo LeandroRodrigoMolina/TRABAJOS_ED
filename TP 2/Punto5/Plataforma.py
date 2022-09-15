@@ -4,7 +4,7 @@ class Plataforma():
         self.portatil = portatil
 
     def __str__(self):
-        return "\nPlataforma: %s\nPortatil: %b" %(self.nombre, self.portatil)
+        return " Plataforma: %s Portatil: %s" %(self.nombre, self.portatil)
 
     def __repr__(self):
         return self.__str__()

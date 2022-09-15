@@ -6,7 +6,7 @@ class Raza:
         self.especie = especie
 
     def __str__(self):
-        return "%s %s" % (self.nombre, self.especie)
+        return "%s \nEspecie: %s" % (self.nombre, self.especie)
 
     def __repr__(self):
         return self.__str__()
