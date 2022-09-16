@@ -82,4 +82,5 @@ videojuegos_admin.ordenar_mejores_primero()
 print("ORDENADO POR MEJORES PRIMERO: ", videojuegos_admin)
 
 print("*"*80)
+print("LISTADO PLATAFORMAS: ", lista_plataforma)
 print("CANTIDAD POR PLATAFORMA: ", lista_por_plataforma)

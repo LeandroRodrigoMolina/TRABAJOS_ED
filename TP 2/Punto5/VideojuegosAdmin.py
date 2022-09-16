@@ -42,27 +42,49 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
 
     def cantidad_por_plataforma(self) -> list:
         """Indica la cantidad de videojuegos por plataforma. """
-        play2 = 0
-        xbox = 0
-        psp = 0
-        wii = 0
-        lista = []
-        for videojuego in self.videojuegos:
-            for plataforma in videojuego.plataformas:
-                if(plataforma.nombre == "Play 2"):
-                    play2 += 1
-                elif(plataforma.nombre == "Xbox"):
-                    xbox += 1
-                elif(plataforma.nombre == "PSP"):
-                    psp += 1
-                elif(plataforma.nombre == "Wii"):
-                    wii += 0
+        # play2 = 0
+        # xbox = 0
+        # psp = 0
+        # wii = 0
+        # lista = []
+        # for videojuego in self.videojuegos:
+        #     for plataforma in videojuego.plataformas:
+        #         if(plataforma.nombre == "Play 2"):
+        #             play2 += 1
+        #         elif(plataforma.nombre == "Xbox"):
+        #             xbox += 1
+        #         elif(plataforma.nombre == "PSP"):
+        #             psp += 1
+        #         elif(plataforma.nombre == "Wii"):
+        #             wii += 0
 
-        lista.append(play2)
-        lista.append(xbox)
-        lista.append(psp)
-        lista.append(wii)
-        return lista
+        # lista.append(play2)
+        # lista.append(xbox)
+        # lista.append(psp)
+        # lista.append(wii)
+        # return lista
+
+        lista_plataformas = []
+        cantidad_por_plataforma = []
+        for videojuego in self.videojuegos:
+            for i in videojuego.plataformas:
+                if (i.nombre not in lista_plataformas):
+                    lista_plataformas.append(i.nombre)
+
+        j = len(lista_plataformas) - 1
+        a = 0
+        while a <= j:
+            print("a ES: ", a)
+            cantidad_por_plataforma.append(0)
+            a += 1 
+        print(lista_plataformas)
+        for videojuego in self.videojuegos:
+            for i in videojuego.plataformas:
+                if(i.nombre in lista_plataformas):
+                    indice_aux = lista_plataformas.index(i.nombre)
+                    cantidad_por_plataforma[indice_aux] += 1
+                
+        return cantidad_por_plataforma
 
     def ordenar_titulo(self) -> None:
         lista_AUX = self.videojuegos
