@@ -52,13 +52,26 @@ lista_filtrado_distribuidora = videojuegos_admin.filtrar_por_distribuidora(empre
 lista_filtrado_genero = VideojuegosAdmin()
 lista_filtrado_genero = videojuegos_admin.filtrar_por_genero(genero3)
 
-print("FILTRADO POR DESARROLLADORA: ", lista_filtrado_desarrolladora)
+lista_por_plataforma = VideojuegosAdmin()
+lista_por_plataforma = videojuegos_admin.cantidad_por_plataforma()
+
+print("__len__:", videojuegos_admin.__len__())
+print("__getitem__:", videojuegos_admin.__getitem__(0))
+videojuegos_admin.__delitem__(0)
+print("DESPUES DE __delitem__:")
+print("__getitem__:", videojuegos_admin.__getitem__(0))
+videojuegos_admin.agregar(videojuego1)
+
+
 
 print("*"*80)
-print("FILTRADO POR DISTRIBUIDORA: ", lista_filtrado_distribuidora)
+print("FILTRADO POR DESARROLLADORA Rockstar: ", lista_filtrado_desarrolladora)
 
 print("*"*80)
-print("FILTRADO POR GENERO: ", lista_filtrado_genero)
+print("FILTRADO POR DISTRIBUIDORA Electronic Arts: ", lista_filtrado_distribuidora)
+
+print("*"*80)
+print("FILTRADO POR GENERO ARCADE: ", lista_filtrado_genero)
 
 print("*"*80)
 videojuegos_admin.ordenar_titulo()
@@ -67,3 +80,6 @@ print("ORDENADO POR TITULO: ", videojuegos_admin)
 print("*"*80)
 videojuegos_admin.ordenar_mejores_primero()
 print("ORDENADO POR MEJORES PRIMERO: ", videojuegos_admin)
+
+print("*"*80)
+print("CANTIDAD POR PLATAFORMA: ", lista_por_plataforma)

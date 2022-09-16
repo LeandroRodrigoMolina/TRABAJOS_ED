@@ -11,6 +11,6 @@ class Plataforma():
 
     def __eq__(self, o):
         if isinstance(o, Plataforma):
-            return (self.nombre == o.nombre) and (self.portatil == o.portatil)
+            return (self.nombre == o.nombre)
         
         return False

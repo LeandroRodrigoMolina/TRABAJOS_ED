@@ -9,6 +9,8 @@ class Mascota:
         self.raza = raza
         self.anioNacimiento = anioNacimiento
         self.amo = amo
+        self.__edad__ = (Mascota.ANIO_ACTUAL - self.anioNacimiento)
+
     def __str__(self):
         return "Numero de registro: %d\nNombre: %s\nRaza: %s\nAnio de Nacimiento: %d\nAmo: %s" % (self.numRegistro, self.nombre, self.raza, self.anioNacimiento, self.amo)
 
@@ -23,4 +25,8 @@ class Mascota:
 
     @property
     def edad(self):
-        return (Mascota.ANIO_ACTUAL - self.anioNacimiento)
+        return self.__edad__
+
+    @edad.setter
+    def edad(self,a):
+        raise ValueError("No se puede")

@@ -73,6 +73,9 @@ lista_empleados = marcacionAdmin1.empleados()
 lista_filtrado_empleado = marcacionAdmin1.filtrar_por_empleado(empleado2)
 lista_filtrado_tipo = marcacionAdmin1.filtrar_por_tipo(marcarcacion15)
 lista_llegadas_tarde = marcacionAdmin1.llegadas_tarde()
+
+
+print("*"*80)
 print("EMPLEADOS: \n", lista_empleados)
 
 print("*"*80)
