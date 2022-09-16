@@ -70,16 +70,17 @@ lista.append(mascota4)
 lista.append(mascota5)
 lista.append(mascota6)
 
-imprimir(lista)
 lista_gerontes = filtrar_gerontes(lista)
 lista_especie = filtrar_por_especie(lista, especie1)
 maximo_persona = max_mascotero(lista)
+
+imprimir(lista)
 
 print("*"*80)
 print("FILTRADO POR GERONTES: \n", lista_gerontes)
 
 print("*"*80)
-print("FILTRADO POR ESPECIE: \n", lista_especie)
+print("FILTRADO POR ESPECIE POR CANINO: \n", lista_especie)
 
 print("*"*80)
 print("Maximo mascotero:\n", maximo_persona)
