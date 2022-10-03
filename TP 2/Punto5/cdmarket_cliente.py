@@ -17,6 +17,7 @@ plataforma3 = Plataforma("PSP", True)
 plataforma4 = Plataforma("Wii", False)
 
 lista_plataforma = [plataforma1, plataforma2, plataforma3, plataforma4]
+
 empresa1 = Empresa("Activision")
 empresa2 = Empresa("Rockstar")
 empresa3 = Empresa("ID Software")
