@@ -1,5 +1,5 @@
-from python_ed_fcad_uner.data_structures.linear.stacks.linked_stack import LinkedStack
-from LinkedStackExt import LinkedStackExt
+from apython_ed_fcad_uner.data_structures.linear.stacks.linked_stack import LinkedStack
+from Punto2LinkedStackExt import LinkedStackExt
 pila_basica = LinkedStackExt()
 pila_basica.push(1)
 pila_basica.push(2)

@@ -1,5 +1,5 @@
-from LinkedStackExtAbstract import LinkedStackExtAbstract
-from python_ed_fcad_uner.data_structures.linear.stacks.linked_stack import LinkedStack
+from apython_ed_fcad_uner.data_structures.linear.stacks.linked_stack import LinkedStack
+from Punto2.LinkedStackExtAbstract import LinkedStackExtAbstract
 
 class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
     def multi_pop(self, num):

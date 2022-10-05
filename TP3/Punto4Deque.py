@@ -1,10 +1,11 @@
 from typing import Any
-from DequeAbstract import DequeAbstract
-from Node import Node
+from Punto4.DequeAbstract import DequeAbstract
+from apython_ed_fcad_uner.data_structures.linear.list_node import ListNode
 
 class Deque(DequeAbstract):
     def __init__(self):
         self.front = None
+        self.prev = None
         self.deque_size = 0
 
     def __len__(self):
@@ -18,7 +19,7 @@ class Deque(DequeAbstract):
         actual = self.front
 
         while(actual != None):
-            resultado += str(actual.data) + ","
+            resultado += str(actual.element) + ","
             actual = actual.next
 
         resultado = resultado[:len(resultado) - 1]
@@ -35,7 +36,7 @@ class Deque(DequeAbstract):
         if(self.deque_size == 0):
             raise Exception("Deque esta vacio. Operacion no valida.")
 
-        return self.front.data
+        return self.front.element
 
     def last(self):
         if(self.deque_size == 0):
@@ -44,32 +45,29 @@ class Deque(DequeAbstract):
         aux = self.front
         while(aux.next != None):
             aux = aux.next
-
-        return aux.data
+        
+        return aux.element
 
     def add_first(self, element):
-        tempo = Node(element)
-        if(self.front == None):
-            self.front = tempo
-            self.deque_size += 1
+        aux = ListNode(element, self.front)
+        if(self.is_empty()):
+            self.front = aux
+            self.prev = aux
         else:
-            tempo.next = self.front
-            self.front = tempo
-            self.deque_size = self.deque_size + 1
+            self.front = aux
+        self.deque_size += 1
 
     def add_last(self, element):
-        tempo = Node(element)
-        if (self.front == None):
-            self.front = tempo
-            self.deque_size += 1
+        aux = ListNode(element)
+        if(self.is_empty()):
+            self.front = aux
+            self.prev = aux
         else:
-            aux = self.front
-            while (aux.next != None):
-                aux = aux.next
+            self.prev.next = aux
+            self.prev = self.prev.next
 
-            aux.next = tempo
-            self.deque_size += 1
-
+        self.deque_size += 1
+        
     def delete_first(self):
         if(self.deque_size == 0):
             raise Exception("Deque esta vacio. Operacion no valida.")

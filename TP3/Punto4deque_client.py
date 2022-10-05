@@ -1,9 +1,25 @@
-from Deque import Deque
+from Punto4Deque import Deque
 
 deque1 = Deque()
 
 #SE USAN METODOS add_first y add_last
-deque1.add_first(1)
+# print(deque1.is_empty())
+# deque1.add_first(5)
+# deque1.add_first(1)
+# deque1.add_last(6)
+# deque1.add_first(3)
+# deque1.add_last(69)
+# # print("FIRST",deque1.first())
+# # print("LAST",deque1.last())
+# print("STR",deque1)
+# print("Size",deque1.deque_size)
+# deque1.delete_last()
+# deque1.delete_last()
+# deque1.delete_last()
+# deque1.delete_first()
+# print(deque1.deque_size)
+# print(deque1)
+
 deque1.add_first(3)
 deque1.add_last(23)
 deque1.add_first(5)
