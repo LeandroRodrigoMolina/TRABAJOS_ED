@@ -36,10 +36,34 @@ class DoubleLinkedList(DoubleLinkedListAbstract):
                 contador += 1
             tempo.data = value
     def __delitem__(self, key): 
-        pass
+        if(key > self.__len__()):
+            raise Exception("Indice fuera de rango.")
+        else:
+            tempo = self.head
+            contador = 0
+            while(contador < key):
+                tempo = tempo.next
+                contador += 1
 
+            # print("\ntempo.previous", tempo.previous.data)
+            # print("tempo.data", tempo.data)
+            # print("tempo.next", tempo.next.data)
+
+            tempo.previous.next = tempo.next
+            tempo.next.previous = tempo.previous
+
+            # print("\nDESPUES DEL CAMBIO\n")
+            # print("tempo.previous", tempo.previous.data)
+            # print("tempo.previous.next",tempo.previous.next.data)
+            # print("tempo.data", tempo.data)
+            # print("tempo.next.previous.data", tempo.next.previous.data)
+            del tempo
     def __iter__(self):
-        pass
+        actual = self.head
+
+        while(actual != None):
+            yield actual.data
+            actual = actual.next
 
     def __str__(self):
         if(self.is_empty()):
