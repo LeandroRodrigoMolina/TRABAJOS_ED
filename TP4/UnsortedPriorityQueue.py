@@ -10,7 +10,6 @@ class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
         int: Cantidad de elementos en la estructura. 0 en caso que esté vacía.
         """
         return len(self.prioridad_queue)
-        pass
 
     def is_empty(self):
         """ Indica si la estructura está vacía o no.
@@ -18,7 +17,6 @@ class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
         bool: True si está vacía. False en caso contrario.
         """
         return len(self.prioridad_queue) == 0
-        pass
 
     def add(self, k, v):
         """ Inserta un nuevo ítem al final de la estructura.
@@ -27,7 +25,6 @@ class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
             v (Any): Valor del ítem.
         """
         self.prioridad_queue.append((k, v))
-        pass
 
     def min(self):
         """ Devuelve una tupla conformada por la clave y valor del ítem con menor valor de
@@ -57,4 +54,3 @@ class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
         i = aux[0]
         self.prioridad_queue.remove(i)
         return i
-        pass
