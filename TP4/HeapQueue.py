@@ -9,9 +9,8 @@ class HeapQueue():
     def __str__(self):
         if(len(self.heap) == 0):
             return "HeapQueue()"
-
-        str_lista = [str(elem) for elem in self.heap if elem != None]            
-        return "HeapQueue(" + ", ".join(str_lista) + ")"   
+        
+        return f"HeapQueue({', '.join(list(str(x) for x in self.heap._data))})"
 
     def __iter__(self):
         i = len(self.heap)
