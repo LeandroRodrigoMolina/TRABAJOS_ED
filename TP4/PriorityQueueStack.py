@@ -5,6 +5,7 @@ adicional de tipo int."""
 class PriorityQueueStack():
     def __init__(self):
         self.prioridad_stack = []
+        self.prioridad_int = 0
 
     def __len__(self):
         return len(self.prioridad_stack)
@@ -12,24 +13,33 @@ class PriorityQueueStack():
     def is_empty(self):
         return len(self.prioridad_stack) == 0
 
-    def add(self, k, v):
-        if(self.is_empty()):
-            self.prioridad_stack.append((k,v))
-        else:
-            self.prioridad_stack.sort(key=lambda a: a[0])
-            self.prioridad_stack.reverse()
-            self.prioridad_stack.append((k,v))
+    def push(self,v):
+        self.prioridad_stack.append((self.prioridad_int, v))
+        self.prioridad_int -= 1
 
-    def min(self):
+    def top(self):
         if(self.is_empty()):
             raise "PriortyQueueStack esta vacio."
-        aux = sorted(self.prioridad_stack)
-        return aux[0]
+        aux = self.prioridad_stack.copy()
+        res = aux.pop()
+        return res
 
-    def remove_min(self):
+    def pop(self):
         if(self.is_empty()):
             raise "PriortyQueueStack esta vacio."
-        self.prioridad_stack.sort(key=lambda a: a[0])
-        self.prioridad_stack.reverse()
-        aux = self.prioridad_stack.pop()
-        return aux
+
+        self.prioridad_int += 1
+        return self.prioridad_stack.pop()
+        
+    def __iter__(self):
+        i = len(self.prioridad_stack)
+        j = 0
+        while j < i:
+            yield self.prioridad_stack[j]
+            j += 1
+
+    def __str__(self):
+        res = ""
+        for elem in self.prioridad_stack:
+            res += str(elem) + ","
+        return "PriorityQueueStack(" + res[:-1] + ")"

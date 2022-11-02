@@ -51,9 +51,19 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
         Returns:
         int: devuelve el número de arcos entre la raíz y nodo. 0 si nodo es la raíz.
         """
-        nodoRaiz = self.root()
-        if(nodoRaiz == nodo.element):
+        aux = self._search_parent(nodo)
+        profundidad = 1
+
+        if (aux == None):
             return 0
+
+        while aux:
+            aux = self._search_parent(aux)
+
+            if (aux == None):
+                return profundidad
+            else:
+                profundidad += 1
 
     def altura(self, nodo):
         """ Retorna la longitud del camino entre nodo y la hoja más lejana.
@@ -62,4 +72,29 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
         Returns:
         int: Devuelve 0 en caso que nodo sea hoja, caso contrario, la cantidad de arcos
         entre nodo y la hoja más lejana. """
-        pass
+        
+        if (nodo.children_count == 0):
+            return 0
+
+        hojas = self.hojas()
+        cont = 0
+        altura = 0
+
+        while len(hojas) != 0:
+            pop_hoja = hojas.pop()
+
+            while pop_hoja:
+                pop_hoja = self._search_parent(pop_hoja)
+
+                if(pop_hoja == nodo):
+                    if(altura < cont):
+                        altura = cont
+                else:
+                    cont += 1
+
+                if (pop_hoja == None):
+                    pass
+                
+                cont = 1
+
+        return altura

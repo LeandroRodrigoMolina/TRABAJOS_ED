@@ -34,12 +34,13 @@ arbol.add_left_child(nodo_k, nodo_m)
 arbol.add_right_child(nodo_k, nodo_n)
 
 print(arbol)
-# print("NODO B Y NODO F ¿SON HERMANOS? ", arbol.hermanos(nodo_b, nodo_f))
+print ("METODO HERMANOS: ","Son hermanos" if arbol.hermanos(nodo_b, nodo_f) == True else "No son hermanos")
 
 lista_hojas = arbol.hojas()
-# print("LISTA DE NODOS HOJAS: ", lista_hojas)
+print("LISTA DE NODOS HOJAS: ", lista_hojas)
 
 lista_internos = arbol.internos()
-# print("LISTA DE NODOS INTERNOS",lista_internos)
+print("LISTA DE NODOS INTERNOS",lista_internos)
 
-print(arbol.profundidad(nodo_a))
+print("PROFUNDIDAD DEL NODO M:", arbol.profundidad(nodo_m))
+print("ALTURA DEL NODO A:", arbol.altura(nodo_a))

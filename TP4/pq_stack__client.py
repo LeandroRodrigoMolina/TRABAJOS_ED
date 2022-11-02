@@ -2,19 +2,27 @@ from PriorityQueueStack import PriorityQueueStack
 
 cola_stack = PriorityQueueStack()
 
-cola_stack.add(10, 8)
-cola_stack.add(0, 3)
-cola_stack.add(-2, 3)
-cola_stack.add(2, 4)
+cola_stack.push(3)
+cola_stack.push(10)
+cola_stack.push(1)
+cola_stack.push(4)
 
-a = cola_stack.min()
+print(cola_stack)
 
-print("MIN", a)
+a = cola_stack.top()
+
+print("TOP", a)
 
 print("LEN",len(cola_stack))
 
-b = cola_stack.remove_min()
-print("REMOVE MIN",b)
+b = cola_stack.pop()
+print("POP (REMOVE MIN)",b)
 
-c = cola_stack.remove_min()
-print("REMOVE MIN 2:", c)
+c = cola_stack.pop()
+print("POP (REMOVE MIN) 2:", c)
+
+cola_stack.push(69)
+print(cola_stack)
+
+for elemento in cola_stack:
+    print(elemento)
