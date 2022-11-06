@@ -1,9 +1,10 @@
-from HeapQueue import HeapQueue
+from Punto7HeapQueue import HeapQueue
 cola_heap = HeapQueue()
 
 print("METODO IS_EMTPY ANTES DE LOS ENQUEUE:",cola_heap.is_empty())
 cola_heap.enqueue(4, 20)
 cola_heap.enqueue(1, 10)
+cola_heap.enqueue(1, 1)
 cola_heap.enqueue(2, 9)
 cola_heap.enqueue(10, 3)
 

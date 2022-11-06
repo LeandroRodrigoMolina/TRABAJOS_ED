@@ -1,5 +1,5 @@
 from apython_ed_fcad_uner.data_structures.trees.linked_binary_tree import LinkedBinaryTree
-from LinkedBinaryTreeExt import LinkedBinaryTreeExt
+from Punto1LinkedBinaryTreeExt import LinkedBinaryTreeExt
 from apython_ed_fcad_uner.data_structures.trees.binary_tree_node import BinaryTreeNode
 
 nodo_a = BinaryTreeNode('A')
@@ -44,3 +44,6 @@ print("LISTA DE NODOS INTERNOS",lista_internos)
 
 print("PROFUNDIDAD DEL NODO M:", arbol.profundidad(nodo_m))
 print("ALTURA DEL NODO A:", arbol.altura(nodo_a))
+
+print("PROFUNDIDAD DEL NODO F:", arbol.profundidad(nodo_f))
+print("ALTURA DEL NODO f:", arbol.altura(nodo_f))

@@ -1,4 +1,4 @@
-from PriorityQueueStack import PriorityQueueStack
+from Punto5PriorityQueueStack import PriorityQueueStack
 
 cola_stack = PriorityQueueStack()
 
@@ -24,5 +24,6 @@ print("POP (REMOVE MIN) 2:", c)
 cola_stack.push(69)
 print(cola_stack)
 
+print("ITER:")
 for elemento in cola_stack:
     print(elemento)
