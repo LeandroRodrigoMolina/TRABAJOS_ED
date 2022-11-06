@@ -16,6 +16,7 @@ print("MIN: ",b)
 j = a.remove_min()
 print("REMOVE MIN:", j)
 
+print("*"*80)
 b = a.min()
 print("MIN 2: ",b)
 

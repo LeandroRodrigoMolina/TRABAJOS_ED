@@ -18,9 +18,11 @@ print("LEN",len(cola_stack))
 b = cola_stack.pop()
 print("POP (REMOVE MIN)",b)
 
+print("*"*80)
 c = cola_stack.pop()
 print("POP (REMOVE MIN) 2:", c)
 
+print("*"*80)
 cola_stack.push(69)
 print(cola_stack)
 
